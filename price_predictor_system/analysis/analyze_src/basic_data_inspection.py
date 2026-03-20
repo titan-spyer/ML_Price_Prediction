@@ -55,7 +55,7 @@ class SummaryStatisticsInspection(DataInspector):
         print("\n--- Summary Statistics(Numerical Feature) ---")
         print(df.describe())
         print("\n---- Summary Statistics(Categorical Feature) ---")
-        print(df.describe(include=["O"]))
+        print(df.describe(include=["object"]))
 
 # Context Class that uses a DataInspectionStrategy
 # ------------------------------------------------
