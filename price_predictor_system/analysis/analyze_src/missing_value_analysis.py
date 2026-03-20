@@ -25,3 +25,13 @@ class SimpleMissingValueAnalysis(MissingValueAnalysisTemplate):
         print("\nMissing Values Count by Column:")
         missing_values = df.isnull().sum()
         print(missing_values[missing_values > 0])
+
+    def visualize_missing_values(self, df: pd.DataFrame):
+        print("\nVisualizing Missing Values...")
+        plt.figure(figsize=(12, 8))
+        sns.heatmap(df.isnull(), cbar=False, cmap="viridis")
+        plt.title("Missing Values Heatmap")
+        plt.show()
+
+if __name__ == "__main__":
+    pass
