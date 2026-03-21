@@ -2,6 +2,7 @@ from steps.data_ingestion import data_ingestion_step
 from steps.missing_value_handel import handle_missing_values_step
 from steps.feature_engineering_step import feature_engineering_step
 from steps.outlier_detection_step import outlier_detection_step
+from steps.data_splitter_step import data_splitter_step
 # from zenml import pipeline, step, Model
 
 
@@ -28,6 +29,9 @@ def ml_pipeline():
     
     # Outlier Detection Step
     outlier_data = outlier_detection_step(transformed_data, column_name="SalePrice")
+
+    # Data Splitting Step
+    x_train, x_test, y_train, y_test = data_splitter_step(outlier_data, target_column="SalePrice")
     
     return filled_data
 
