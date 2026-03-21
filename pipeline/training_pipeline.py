@@ -1,4 +1,4 @@
-from steps.data_ingestion_step import data_ingestion_step
+from steps.data_ingestion import data_ingestion_step
 from steps.missing_value_handel import handle_missing_values_step
 from zenml import pipeline, step, Model
 
