@@ -13,7 +13,7 @@ def ml_pipeline():
 
     # Data Ingestion Step
     raw_data = data_ingestion_step(
-        file_path = "/content/ML_Price_Prediction/Data.zip"
+        file_path = "Data.zip"
     )
     
     # Handling Missing Values Step
