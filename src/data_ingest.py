@@ -57,17 +57,17 @@ class DataIngestFactory:
 
 
 if __name__ == '__main__':
-    file_path = "Data.zip"
+    # file_path = "Data.zip"
 
-    # Determine the extension
-    file_extension = os.path.splitext(file_path)[1]
+    # # Determine the extension
+    # file_extension = os.path.splitext(file_path)[1]
 
-    # Appropiate Data ingestor.
-    data_ingestor = DataIngestFactory.get_ingestor(file_extension[1:])
+    # # Appropiate Data ingestor.
+    # data_ingestor = DataIngestFactory.get_ingestor(file_extension[1:])
 
-    # Ingest the data.
-    df = data_ingestor.ingest_data(file_path)
+    # # Ingest the data.
+    # df = data_ingestor.ingest_data(file_path)
 
-    # The df contains the data extracted from csv
-    print(df)
+    # # The df contains the data extracted from csv
+    # print(df)
     pass
