@@ -1,8 +1,8 @@
 import pandas as pd
 from src.handeling_misssing_values import MissingValueHandlerContext, DropMissingValues, FillMissingValues
-from zenml import step
+# from zenml import step
 
-@step
+# @step
 def handle_missing_values_step(df: pd.DataFrame, strategy: str = "mean") -> pd.DataFrame:
     """Handles missing values using MissingValueHandler and the specified strategy."""
     if strategy == "drop":

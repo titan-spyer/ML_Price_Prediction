@@ -1,8 +1,8 @@
 import pandas as pd
 from src.data_ingest import DataIngestFactory
-from zenml import step
+# from zenml import step
 
-@step
+# @step
 def data_ingestion_step(file_path: str) -> pd.DataFrame:
     """Ingest data from a ZIP file using the appropriate DataIngestor."""
     # Determine the file extension
