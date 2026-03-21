@@ -20,8 +20,11 @@ class ZScoreOutlierDetection(OutlierDetectionStrategy):
 
     def detect_outliers(self, df: pd.DataFrame) -> pd.DataFrame:
         logging.info("Detecting outliers using the Z-score method.")
-        z_scores = np.abs((df - df.mean()) / df.std())
-        outliers = z_scores > self.threshold
+        df_numeric = df.select_dtypes(include=['number'])
+        z_scores = np.abs((df_numeric - df_numeric.mean()) / df_numeric.std())
+        numeric_outliers = z_scores > self.threshold
+        outliers = pd.DataFrame(False, index=df.index, columns=df.columns)
+        outliers.update(numeric_outliers)
         logging.info(f"Outliers detected with Z-score threshold: {self.threshold}.")
         return outliers
 
