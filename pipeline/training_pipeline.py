@@ -3,6 +3,7 @@ from steps.missing_value_handel import handle_missing_values_step
 from steps.feature_engineering_step import feature_engineering_step
 from steps.outlier_detection_step import outlier_detection_step
 from steps.data_splitter_step import data_splitter_step
+from steps.model_building_step import model_building_step
 # from zenml import pipeline, step, Model
 
 
@@ -32,8 +33,12 @@ def ml_pipeline():
 
     # Data Splitting Step
     x_train, x_test, y_train, y_test = data_splitter_step(outlier_data, target_column="SalePrice")
+
+    # Model Building step
+    model = model_building_step(x_train=x_train, y_train=y_train)
+
     
-    return filled_data
+    return model
 
 
 if __name__ == "__main__":
