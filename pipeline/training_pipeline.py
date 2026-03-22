@@ -45,4 +45,4 @@ if __name__ == "__main__":
     # Running the pipeline
     run = ml_pipeline()
     print("Pipeline executed successfully.")
-    print(run.head())
+    # print(run.head())
