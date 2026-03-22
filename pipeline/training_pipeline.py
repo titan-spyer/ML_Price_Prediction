@@ -35,7 +35,7 @@ def ml_pipeline():
     x_train, x_test, y_train, y_test = data_splitter_step(outlier_data, target_column="SalePrice")
 
     # Model Building step
-    model = model_building_step(x_train=x_train, y_train=y_train)
+    model = model_building_step(x_train, y_train)
 
     
     return model
